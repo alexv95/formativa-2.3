@@ -4,36 +4,27 @@
       <div class="col align-self-center">
         <br />
         <div class="mb-3">
-          <label for="name" class="form-label"><!-- Nombre:  --></label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Escriba su nombre"
-            formControlName="name"
-          />
+          <label for="name" class="form-label">
+            <!-- Nombre:  -->
+          </label>
+          <input type="text" class="form-control" id="name" placeholder="Escriba su nombre" formControlName="name"
+            minlength="4" maxlength="10" required />
           <!-- <div class="text-start">{{ name }}</div> -->
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label"><!-- Correo Electrónico:  --></label>
-          <input
-            type="text"
-            class="form-control"
-            id="email"
-            placeholder="escriba su correo electrónico"
-            formControlName="email"
-          />
+          <label for="email" class="form-label">
+            <!-- Correo Electrónico:  -->
+          </label>
+          <input type="email" class="form-control" id="email" placeholder="escriba su correo electrónico"
+            formControlName="email" />
         </div>
         <div class="mb-3">
-          <label for="telephone" class="form-label"><!-- Telefono:  --></label>
-          <input
-            type="text"
-            class="form-control"
-            id="telephone"
-            placeholder="XX-XXXX-XXXX"
-            formControlName="telephone"
-          />
-        </div>            
+          <label for="telephone" class="form-label">
+            <!-- Telefono:  -->
+          </label>
+          <input type="tel" class="form-control" id="telephone" placeholder="XX-XXXX-XXXX"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" formControlName="telephone" />
+        </div>
         <div class="container">
           <div class="row justify-content-start">
             <div class="col-4 offset-4">
@@ -52,4 +43,3 @@
     </ul>
   </div>
 </form>
-
