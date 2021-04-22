@@ -11,22 +11,22 @@ export class AppComponent {
   usuario !: Usuario;
   formulario = new FormGroup({
     name: new FormControl('', Validators.required),
-    email: new FormControl('',Validators.required),
-    telephone: new FormControl('',Validators.required),
-    
+    email: new FormControl('', Validators.required),
+    telephone: new FormControl('', [Validators.required, Validators.pattern('(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}')]),
+
   });
-  
-  metodo(){
+
+  metodo() {
     this.datos = `Nombre=${this.formulario.value.name}
                   Telefono=${this.formulario.value.telephone}
                   Correo=${this.formulario.value.email}
                   `;
-    this.usuario = new Usuario(this.formulario.value.name,this.formulario.value.email,this.formulario.value.telephone);
+    this.usuario = new Usuario(this.formulario.value.name, this.formulario.value.email, this.formulario.value.telephone);
   }
 }
 
-class Usuario  {
-  constructor ( public name: string , public email :string , public telephone : string) {
+class Usuario {
+  constructor(public name: string, public email: string, public telephone: string) {
 
   }
 }
